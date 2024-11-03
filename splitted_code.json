@@ -1,0 +1,127 @@
+[
+    {
+        "prefix": "def evaluation(points):\n    if points <= 54:\n        return 5\n    if points <= 64:\n        return 6\n    if points <= 74:\n        return 7\n    if points <= 84:\n        return 8",
+        "middle": "    if points <= 94:",
+        "suffix": "        return 9\n    return 10"
+    },
+    {
+        "prefix": "def is_leap(year):\n    if year % 400 == 0:\n        return True",
+        "middle": "    if year % 100 == 0:\n        return False",
+        "suffix": "    if year % 4 == 0:\n        return True\n    return False"
+    },
+    {
+        "prefix": "def minimum(array):\n    minimal = array[0]\n    for element in array:\n        if element<minimal:",
+        "middle": "            minimal = element",
+        "suffix": "    return minimal"
+    },
+    {
+        "prefix": "def maximum(array):\n    maximal = array[0]",
+        "middle": "    for element in array:",
+        "suffix": "        if element > maximal:\n            maximal = element\n    return maximal"
+    },
+    {
+        "prefix": "def sum(array):\n    sum = 0",
+        "middle": "    for element in array:",
+        "suffix": "        sum += element\n    return sum"
+    },
+    {
+        "prefix": "def palindrome(text):\n    text = text.lower()",
+        "middle": "    is_palindrome = True",
+        "suffix": "    for i in range(len(text) // 2):\n        if text[i] != text[-1 - i]:\n            is_palindrome = False\n    return is_palindrome"
+    },
+    {
+        "prefix": "def quadratic_equation(a, b, c):\n    D = b**2-4*a*c\n    if D>0:\n        square_root = sqrt(D)",
+        "middle": "        x1 = (-b+square_root)/(2*a)",
+        "suffix": "        x2 = (-b-square_root)/(2*a)\n        return x1, x2"
+    },
+    {
+        "prefix": "def download_datasets(dataset_path, training_transform, test_transform, extract_young):\n    training_dataset = torchvision.datasets.CelebA(dataset_path, split='train', target_type='attr', download=False, transform=training_transform, target_transform=extract_young)\n    validation_dataset = torchvision.datasets.CelebA(dataset_path, split='valid', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)",
+        "middle": "    testing_dataset = torchvision.datasets.CelebA(dataset_path, split='test', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)",
+        "suffix": "    return training_dataset, validation_dataset, testing_dataset"
+    },
+    {
+        "prefix": "def print_datasets_length(training_dataset, validation_dataset, testing_dataset):\n    print('Training set length:', len(training_dataset))",
+        "middle": "    print('Validation set length:', len(validation_dataset))",
+        "suffix": "    print('Testing set length:', len(testing_dataset))"
+    },
+    {
+        "prefix": "def create_splitted_subsets(training_dataset, validation_dataset, testing_dataset):\n    training_dataset = Subset(training_dataset, torch.arange(21000))",
+        "middle": "    validation_dataset = Subset(validation_dataset, torch.arange(7000))",
+        "suffix": "    testing_dataset  = Subset(testing_dataset , torch.arange(7000))\n    return training_dataset, validation_dataset, testing_dataset"
+    },
+    {
+        "prefix": "def print_splitted_datasets(training_dataset, validation_dataset, testing_dataset):\n    print('Training set:', len(training_dataset))",
+        "middle": "    print('Validation set:', len(validation_dataset))",
+        "suffix": "    print('Testing set:', len(testing_dataset ))"
+    },
+    {
+        "prefix": "def get_data_loaders(training_dataset, validation_dataset, testing_dataset, batch_size):\n    training_data_loader = DataLoader(training_dataset, batch_size, shuffle=True)",
+        "middle": "    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)",
+        "suffix": "    testing_data_loader = DataLoader(testing_dataset, batch_size, shuffle=False)\n    return training_data_loader, validation_data_loader, testing_data_loader"
+    },
+    {
+        "prefix": "def create_model():\n    model = nn.Sequential()\n    model.add_module('conv1', nn.Conv2d(in_channels=3, out_channels=32, kernel_size=5, padding=1))\n    model.add_module('batchnorm1', nn.BatchNorm2d(32))\n    model.add_module('relu1', nn.ReLU())",
+        "middle": "    model.add_module('pool1', nn.MaxPool2d(kernel_size=2))\n    model.add_module('dropout1', nn.Dropout(p=0.6))\n    model.add_module('conv2', nn.Conv2d(in_channels=32, out_channels=64, kernel_size=5, padding=1))\n    model.add_module('batchnorm2', nn.BatchNorm2d(64))\n    model.add_module('relu2', nn.ReLU())",
+        "suffix": "    model.add_module('pool2', nn.MaxPool2d(kernel_size=2))\n    model.add_module('dropout2', nn.Dropout(p=0.4))\n    model.add_module('conv3', nn.Conv2d(in_channels=64, out_channels=128, kernel_size=5, padding=1))\n    model.add_module('batchnorm3', nn.BatchNorm2d(128))\n    model.add_module('relu3', nn.ReLU())\n    model.add_module('pool3', nn.MaxPool2d(kernel_size=2))\n    model.add_module('conv4', nn.Conv2d(in_channels=128, out_channels=256, kernel_size=5, padding=1))\n    model.add_module('batchnorm4', nn.BatchNorm2d(256))\n    model.add_module('relu4', nn.ReLU())\n    model.add_module('pool4', nn.AvgPool2d(kernel_size=4, padding=0))\n    model.add_module('flatten', nn.Flatten())\n    model.add_module('fc', nn.Linear(256, 1))\n    model.add_module('sigmoid', nn.Sigmoid())\n    return model"
+    },
+    {
+        "prefix": "def train(model, training_data_loader, epoch, device, loss_fn, optimizer):\n    training_loss_hist, training_accuracy_hist = [], []\n    training_loss, training_accuracy = 0, 0\n    model.train()\n    for x_batch, y_batch in training_data_loader:\n        x_batch = x_batch.to(device)\n        y_batch = y_batch.to(device)",
+        "middle": "        prediction = model(x_batch)[:, 0]\n        loss = loss_fn(prediction, y_batch.float())\n        loss.backward()\n        optimizer.step()\n        optimizer.zero_grad()",
+        "suffix": "        training_loss += loss.item()*y_batch.size(0)\n        is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n        training_accuracy += is_prediction_correct.sum().cpu()\n    training_loss /= len(training_data_loader.dataset)\n    training_accuracy /= len(training_data_loader.dataset)\n    training_loss_hist.append(training_loss)\n    training_accuracy_hist.append(training_accuracy)\n    print(f'Epoch {epoch+1} train accuracy: {training_accuracy:.4f}')"
+    },
+    {
+        "prefix": "def eval(model, validation_data_loader, epoch, device, loss_fn, optimizer):\n    validation_loss_hist, validation_accuracy_hist = [], []\n    validation_loss, validation_accuracy = 0, 0\n    model.eval()\n    with torch.no_grad():\n        for x_batch, y_batch in validation_data_loader:\n            x_batch = x_batch.to(device)",
+        "middle": "            y_batch = y_batch.to(device)\n            prediction = model(x_batch)[:, 0]\n            loss = loss_fn(prediction, y_batch.float())",
+        "suffix": "            validation_loss += loss.item()*y_batch.size(0)\n            is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n            validation_accuracy += is_prediction_correct.sum().cpu()\n    validation_loss /= len(validation_data_loader.dataset)\n    validation_accuracy /= len(validation_data_loader.dataset)\n    validation_loss_hist.append(validation_loss)\n    validation_accuracy_hist.append(validation_accuracy)\n    print(f'Epoch {epoch+1} validation accuracy: {validation_accuracy:.4f}')"
+    },
+    {
+        "prefix": "def test(model, testing_data_loader, device, loss_fn, optimizer):\n  testing_accuracy = 0",
+        "middle": "  model.eval()\n  with torch.no_grad():",
+        "suffix": "      for x_batch, y_batch in testing_data_loader:\n          x_batch = x_batch.to(device)\n          y_batch = y_batch.to(device)\n          prediction = model(x_batch)[:, 0]\n          is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n          testing_accuracy += is_prediction_correct.sum().cpu()\n  testing_accuracy /= len(testing_data_loader.dataset)\n  print(f'Test accuracy: {testing_accuracy:.4f}')"
+    },
+    {
+        "prefix": "def label_encode_data(train_data, test_data):\n    encoder = LabelEncoder()",
+        "middle": "    train_data['region'] = encoder.fit_transform(train_data['region'])",
+        "suffix": "    test_data['region'] = encoder.transform(test_data['region'])\n    return train_data, test_data"
+    },
+    {
+        "prefix": "def preprocess_data(train_data, test_data):\n    train_data = train_data.drop(columns=['Surface Area'])\n    test_data = test_data.drop(columns=[ 'Surface Area'])",
+        "middle": "    train_data['GDP per Capita'] = train_data['GDP per Capita'].fillna(train_data['GDP per Capita'].mean())",
+        "suffix": "    train_data = train_data.dropna().reset_index(drop=True)\n    return train_data, test_data"
+    },
+    {
+        "prefix": "def get_x_y(train_data, test_data):\n    X_train = train_data.drop(columns=['region']) \n    y_train = train_data['region']\n    X_test = test_data.drop(columns=['region']) ",
+        "middle": "    y_test = test_data['region']",
+        "suffix": "    return X_train, X_test, y_train, y_test"
+    },
+    {
+        "prefix": "def get_score(X_train, y_train, X_test, y_test):\n    gmm = GaussianMixture(n_components=4, random_state=31, covariance_type='tied', init_params='random_from_data')\n    gmm.fit(X_train)",
+        "middle": "    y_pred = gmm.predict(X_test)",
+        "suffix": "    return v_measure_score(y_test, y_pred)"
+    },
+    {
+        "prefix": "def load_and_group_data_by_image(answers_file_path, questions_file_path):\n    answers_data = load_json_data(answers_file_path)\n    questions_data = load_json_data(questions_file_path)\n    answers_by_image = defaultdict(list)\n    for answer in answers_data:\n        answers_by_image[answer['image_id']].append(answer)\n    questions_by_image = defaultdict(list)",
+        "middle": "    for question in questions_data[\"questions\"]:",
+        "suffix": "        questions_by_image[question['image_id']].append(question)\n    return answers_by_image, questions_by_image"
+    },
+    {
+        "prefix": "def get_disc_loss(real_content, fake_content, disc_content, adversarial_criterion):\n    disc_fake_content_hat = disc_content(fake_content.detach())\n    disc_fake_content_loss = adversarial_criterion(disc_fake_content_hat, torch.zeros_like(disc_fake_content_hat))",
+        "middle": "    disc_real_content_hat = disc_content(real_content)",
+        "suffix": "    disc_real_content_loss = adversarial_criterion(disc_real_content_hat, torch.ones_like(disc_real_content_hat))\n    return (disc_fake_content_loss + disc_real_content_loss) / 2"
+    },
+    {
+        "prefix": "def load_pickle_data(pickle_file_path):\n    with open(pickle_file_path, 'rb') as f:",
+        "middle": "        data = pickle.load(f)",
+        "suffix": "    return data"
+    },
+    {
+        "prefix": "def load_json_data(json_file_path):\n    with open(json_file_path) as f:",
+        "middle": "        data = json.load(f)",
+        "suffix": "    return data"
+    },
+    {
+        "prefix": "def load_yaml_data(config_path):\n    with open(config_path, 'r') as f:",
+        "middle": "        data = yaml.safe_load(f)",
+        "suffix": "    return data"
+    }
+]
