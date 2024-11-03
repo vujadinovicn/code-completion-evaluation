@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def maximum(array):\n    maximal = array[0]\n<fim_suffix>\n        if element > maximal:\n            maximal = element\n    return maximal<fim_middle>",
+    "gt_fim_middle": "    for element in array:",
+    "output": "<fim_prefix>def maximum(array):\n    maximal = array[0]\n<fim_suffix>\n        if element > maximal:\n            maximal = element\n    return maximal<fim_middle>    for element in array:<|endoftext|>",
+    "predicted_fim_middle": "    for element in array:"
+}

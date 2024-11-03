@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def load_yaml_data(config_path):\n    with open(config_path, 'r') as f:\n<fim_suffix>\n    return data<fim_middle>",
+    "gt_fim_middle": "        data = yaml.safe_load(f)",
+    "output": "<fim_prefix>def load_yaml_data(config_path):\n    with open(config_path, 'r') as f:\n<fim_suffix>\n    return data<fim_middle>        data = yaml.load(f)<|endoftext|>",
+    "predicted_fim_middle": "        data = yaml.load(f)"
+}

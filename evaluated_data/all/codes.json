@@ -1,0 +1,152 @@
+[
+    {
+        "input": "<fim_prefix>def evaluation(points):\n    if points <= 54:\n        return 5\n    if points <= 64:\n        return 6\n    if points <= 74:\n        return 7\n    if points <= 84:\n        return 8\n<fim_suffix>\n        return 9\n    return 10<fim_middle>",
+        "gt_fim_middle": "    if points <= 94:",
+        "output": "<fim_prefix>def evaluation(points):\n    if points <= 54:\n        return 5\n    if points <= 64:\n        return 6\n    if points <= 74:\n        return 7\n    if points <= 84:\n        return 8\n<fim_suffix>\n        return 9\n    return 10<fim_middle>    if points <= 94:<|endoftext|>",
+        "predicted_fim_middle": "    if points <= 94:"
+    },
+    {
+        "input": "<fim_prefix>def is_leap(year):\n    if year % 400 == 0:\n        return True\n<fim_suffix>\n    if year % 4 == 0:\n        return True\n    return False<fim_middle>",
+        "gt_fim_middle": "    if year % 100 == 0:\n        return False",
+        "output": "<fim_prefix>def is_leap(year):\n    if year % 400 == 0:\n        return True\n<fim_suffix>\n    if year % 4 == 0:\n        return True\n    return False<fim_middle>    elif year % 100!= 0 and year % 400!= 0:<|endoftext|>",
+        "predicted_fim_middle": "    elif year % 100!= 0 and year % 400!= 0:"
+    },
+    {
+        "input": "<fim_prefix>def minimum(array):\n    minimal = array[0]\n    for element in array:\n        if element<minimal:\n<fim_suffix>\n    return minimal<fim_middle>",
+        "gt_fim_middle": "            minimal = element",
+        "output": "<fim_prefix>def minimum(array):\n    minimal = array[0]\n    for element in array:\n        if element<minimal:\n<fim_suffix>\n    return minimal<fim_middle>            minimal=element<|endoftext|>",
+        "predicted_fim_middle": "            minimal=element"
+    },
+    {
+        "input": "<fim_prefix>def maximum(array):\n    maximal = array[0]\n<fim_suffix>\n        if element > maximal:\n            maximal = element\n    return maximal<fim_middle>",
+        "gt_fim_middle": "    for element in array:",
+        "output": "<fim_prefix>def maximum(array):\n    maximal = array[0]\n<fim_suffix>\n        if element > maximal:\n            maximal = element\n    return maximal<fim_middle>    for element in array:<|endoftext|>",
+        "predicted_fim_middle": "    for element in array:"
+    },
+    {
+        "input": "<fim_prefix>def sum(array):\n    sum = 0\n<fim_suffix>\n        sum += element\n    return sum<fim_middle>",
+        "gt_fim_middle": "    for element in array:",
+        "output": "<fim_prefix>def sum(array):\n    sum = 0\n<fim_suffix>\n        sum += element\n    return sum<fim_middle>    for element in array:<|endoftext|>",
+        "predicted_fim_middle": "    for element in array:"
+    },
+    {
+        "input": "<fim_prefix>def palindrome(text):\n    text = text.lower()\n<fim_suffix>\n    for i in range(len(text) // 2):\n        if text[i] != text[-1 - i]:\n            is_palindrome = False\n    return is_palindrome<fim_middle>",
+        "gt_fim_middle": "    is_palindrome = True",
+        "output": "<fim_prefix>def palindrome(text):\n    text = text.lower()\n<fim_suffix>\n    for i in range(len(text) // 2):\n        if text[i] != text[-1 - i]:\n            is_palindrome = False\n    return is_palindrome<fim_middle>    is_palindrome = True<|endoftext|>",
+        "predicted_fim_middle": "    is_palindrome = True"
+    },
+    {
+        "input": "<fim_prefix>def quadratic_equation(a, b, c):\n    D = b**2-4*a*c\n    if D>0:\n        square_root = sqrt(D)\n<fim_suffix>\n        x2 = (-b-square_root)/(2*a)\n        return x1, x2<fim_middle>",
+        "gt_fim_middle": "        x1 = (-b+square_root)/(2*a)",
+        "output": "<fim_prefix>def quadratic_equation(a, b, c):\n    D = b**2-4*a*c\n    if D>0:\n        square_root = sqrt(D)\n<fim_suffix>\n        x2 = (-b-square_root)/(2*a)\n        return x1, x2<fim_middle>        x1 = (b+sqrt(D))/(2*a)<|endoftext|>",
+        "predicted_fim_middle": "        x1 = (b+sqrt(D))/(2*a)"
+    },
+    {
+        "input": "<fim_prefix>def download_datasets(dataset_path, training_transform, test_transform, extract_young):\n    training_dataset = torchvision.datasets.CelebA(dataset_path, split='train', target_type='attr', download=False, transform=training_transform, target_transform=extract_young)\n    validation_dataset = torchvision.datasets.CelebA(dataset_path, split='valid', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)\n<fim_suffix>\n    return training_dataset, validation_dataset, testing_dataset<fim_middle>",
+        "gt_fim_middle": "    testing_dataset = torchvision.datasets.CelebA(dataset_path, split='test', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)",
+        "output": "<fim_prefix>def download_datasets(dataset_path, training_transform, test_transform, extract_young):\n    training_dataset = torchvision.datasets.CelebA(dataset_path, split='train', target_type='attr', download=False, transform=training_transform, target_transform=extract_young)\n    validation_dataset = torchvision.datasets.CelebA(dataset_path, split='valid', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)\n<fim_suffix>\n    return training_dataset, validation_dataset, testing_dataset<fim_middle>    testing_dataset = torchvision.datasets.CelebA(dataset_path, split='test', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)<|endoftext|>",
+        "predicted_fim_middle": "    testing_dataset = torchvision.datasets.CelebA(dataset_path, split='test', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)"
+    },
+    {
+        "input": "<fim_prefix>def print_datasets_length(training_dataset, validation_dataset, testing_dataset):\n    print('Training set length:', len(training_dataset))\n<fim_suffix>\n    print('Testing set length:', len(testing_dataset))<fim_middle>",
+        "gt_fim_middle": "    print('Validation set length:', len(validation_dataset))",
+        "output": "<fim_prefix>def print_datasets_length(training_dataset, validation_dataset, testing_dataset):\n    print('Training set length:', len(training_dataset))\n<fim_suffix>\n    print('Testing set length:', len(testing_dataset))<fim_middle>    print('Validation set length:', len(validation_dataset))<|endoftext|>",
+        "predicted_fim_middle": "    print('Validation set length:', len(validation_dataset))"
+    },
+    {
+        "input": "<fim_prefix>def create_splitted_subsets(training_dataset, validation_dataset, testing_dataset):\n    training_dataset = Subset(training_dataset, torch.arange(21000))\n<fim_suffix>\n    testing_dataset  = Subset(testing_dataset , torch.arange(7000))\n    return training_dataset, validation_dataset, testing_dataset<fim_middle>",
+        "gt_fim_middle": "    validation_dataset = Subset(validation_dataset, torch.arange(7000))",
+        "output": "<fim_prefix>def create_splitted_subsets(training_dataset, validation_dataset, testing_dataset):\n    training_dataset = Subset(training_dataset, torch.arange(21000))\n<fim_suffix>\n    testing_dataset  = Subset(testing_dataset , torch.arange(7000))\n    return training_dataset, validation_dataset, testing_dataset<fim_middle>    validation_dataset = Subset(validation_dataset, torch.arange(21000))<|endoftext|>",
+        "predicted_fim_middle": "    validation_dataset = Subset(validation_dataset, torch.arange(21000))"
+    },
+    {
+        "input": "<fim_prefix>def print_splitted_datasets(training_dataset, validation_dataset, testing_dataset):\n    print('Training set:', len(training_dataset))\n<fim_suffix>\n    print('Testing set:', len(testing_dataset ))<fim_middle>",
+        "gt_fim_middle": "    print('Validation set:', len(validation_dataset))",
+        "output": "<fim_prefix>def print_splitted_datasets(training_dataset, validation_dataset, testing_dataset):\n    print('Training set:', len(training_dataset))\n<fim_suffix>\n    print('Testing set:', len(testing_dataset ))<fim_middle>    print('Validation set:', len(validation_dataset))<|endoftext|>",
+        "predicted_fim_middle": "    print('Validation set:', len(validation_dataset))"
+    },
+    {
+        "input": "<fim_prefix>def get_data_loaders(training_dataset, validation_dataset, testing_dataset, batch_size):\n    training_data_loader = DataLoader(training_dataset, batch_size, shuffle=True)\n<fim_suffix>\n    testing_data_loader = DataLoader(testing_dataset, batch_size, shuffle=False)\n    return training_data_loader, validation_data_loader, testing_data_loader<fim_middle>",
+        "gt_fim_middle": "    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)",
+        "output": "<fim_prefix>def get_data_loaders(training_dataset, validation_dataset, testing_dataset, batch_size):\n    training_data_loader = DataLoader(training_dataset, batch_size, shuffle=True)\n<fim_suffix>\n    testing_data_loader = DataLoader(testing_dataset, batch_size, shuffle=False)\n    return training_data_loader, validation_data_loader, testing_data_loader<fim_middle>    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)<|endoftext|>",
+        "predicted_fim_middle": "    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)"
+    },
+    {
+        "input": "<fim_prefix>def create_model():\n    model = nn.Sequential()\n    model.add_module('conv1', nn.Conv2d(in_channels=3, out_channels=32, kernel_size=5, padding=1))\n    model.add_module('batchnorm1', nn.BatchNorm2d(32))\n    model.add_module('relu1', nn.ReLU())\n<fim_suffix>\n    model.add_module('pool2', nn.MaxPool2d(kernel_size=2))\n    model.add_module('dropout2', nn.Dropout(p=0.4))\n    model.add_module('conv3', nn.Conv2d(in_channels=64, out_channels=128, kernel_size=5, padding=1))\n    model.add_module('batchnorm3', nn.BatchNorm2d(128))\n    model.add_module('relu3', nn.ReLU())\n    model.add_module('pool3', nn.MaxPool2d(kernel_size=2))\n    model.add_module('conv4', nn.Conv2d(in_channels=128, out_channels=256, kernel_size=5, padding=1))\n    model.add_module('batchnorm4', nn.BatchNorm2d(256))\n    model.add_module('relu4', nn.ReLU())\n    model.add_module('pool4', nn.AvgPool2d(kernel_size=4, padding=0))\n    model.add_module('flatten', nn.Flatten())\n    model.add_module('fc', nn.Linear(256, 1))\n    model.add_module('sigmoid', nn.Sigmoid())\n    return model<fim_middle>",
+        "gt_fim_middle": "    model.add_module('pool1', nn.MaxPool2d(kernel_size=2))\n    model.add_module('dropout1', nn.Dropout(p=0.6))\n    model.add_module('conv2', nn.Conv2d(in_channels=32, out_channels=64, kernel_size=5, padding=1))\n    model.add_module('batchnorm2', nn.BatchNorm2d(64))\n    model.add_module('relu2', nn.ReLU())",
+        "output": "<fim_prefix>def create_model():\n    model = nn.Sequential()\n    model.add_module('conv1', nn.Conv2d(in_channels=3, out_channels=32, kernel_size=5, padding=1))\n    model.add_module('batchnorm1', nn.BatchNorm2d(32))\n    model.add_module('relu1', nn.ReLU())\n<fim_suffix>\n    model.add_module('pool2', nn.MaxPool2d(kernel_size=2))\n    model.add_module('dropout2', nn.Dropout(p=0.4))\n    model.add_module('conv3', nn.Conv2d(in_channels=64, out_channels=128, kernel_size=5, padding=1))\n    model.add_module('batchnorm3', nn.BatchNorm2d(128))\n    model.add_module('relu3', nn.ReLU())\n    model.add_module('pool3', nn.MaxPool2d(kernel_size=2))\n    model.add_module('conv4', nn.Conv2d(in_channels=128, out_channels=256, kernel_size=5, padding=1))\n    model.add_module('batchnorm4', nn.BatchNorm2d(256))\n    model.add_module('relu4', nn.ReLU())\n    model.add_module('pool4', nn.AvgPool2d(kernel_size=4, padding=0))\n    model.add_module('flatten', nn.Flatten())\n    model.add_module('fc', nn.Linear(256, 1))\n    model.add_module('sigmoid', nn.Sigmoid())\n    return model<fim_middle>    model.add_module('maxpool1', nn.MaxPool2d(kernel_size=2))<|endoftext|>",
+        "predicted_fim_middle": "    model.add_module('maxpool1', nn.MaxPool2d(kernel_size=2))"
+    },
+    {
+        "input": "<fim_prefix>def train(model, training_data_loader, epoch, device, loss_fn, optimizer):\n    training_loss_hist, training_accuracy_hist = [], []\n    training_loss, training_accuracy = 0, 0\n    model.train()\n    for x_batch, y_batch in training_data_loader:\n        x_batch = x_batch.to(device)\n        y_batch = y_batch.to(device)\n<fim_suffix>\n        training_loss += loss.item()*y_batch.size(0)\n        is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n        training_accuracy += is_prediction_correct.sum().cpu()\n    training_loss /= len(training_data_loader.dataset)\n    training_accuracy /= len(training_data_loader.dataset)\n    training_loss_hist.append(training_loss)\n    training_accuracy_hist.append(training_accuracy)\n    print(f'Epoch {epoch+1} train accuracy: {training_accuracy:.4f}')<fim_middle>",
+        "gt_fim_middle": "        prediction = model(x_batch)[:, 0]\n        loss = loss_fn(prediction, y_batch.float())\n        loss.backward()\n        optimizer.step()\n        optimizer.zero_grad()",
+        "output": "<fim_prefix>def train(model, training_data_loader, epoch, device, loss_fn, optimizer):\n    training_loss_hist, training_accuracy_hist = [], []\n    training_loss, training_accuracy = 0, 0\n    model.train()\n    for x_batch, y_batch in training_data_loader:\n        x_batch = x_batch.to(device)\n        y_batch = y_batch.to(device)\n<fim_suffix>\n        training_loss += loss.item()*y_batch.size(0)\n        is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n        training_accuracy += is_prediction_correct.sum().cpu()\n    training_loss /= len(training_data_loader.dataset)\n    training_accuracy /= len(training_data_loader.dataset)\n    training_loss_hist.append(training_loss)\n    training_accuracy_hist.append(training_accuracy)\n    print(f'Epoch {epoch+1} train accuracy: {training_accuracy:.4f}')<fim_middle>        optimizer.zero_grad()<|endoftext|>",
+        "predicted_fim_middle": "        optimizer.zero_grad()"
+    },
+    {
+        "input": "<fim_prefix>def eval(model, validation_data_loader, epoch, device, loss_fn, optimizer):\n    validation_loss_hist, validation_accuracy_hist = [], []\n    validation_loss, validation_accuracy = 0, 0\n    model.eval()\n    with torch.no_grad():\n        for x_batch, y_batch in validation_data_loader:\n            x_batch = x_batch.to(device)\n<fim_suffix>\n            validation_loss += loss.item()*y_batch.size(0)\n            is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n            validation_accuracy += is_prediction_correct.sum().cpu()\n    validation_loss /= len(validation_data_loader.dataset)\n    validation_accuracy /= len(validation_data_loader.dataset)\n    validation_loss_hist.append(validation_loss)\n    validation_accuracy_hist.append(validation_accuracy)\n    print(f'Epoch {epoch+1} validation accuracy: {validation_accuracy:.4f}')<fim_middle>",
+        "gt_fim_middle": "            y_batch = y_batch.to(device)\n            prediction = model(x_batch)[:, 0]\n            loss = loss_fn(prediction, y_batch.float())",
+        "output": "<fim_prefix>def eval(model, validation_data_loader, epoch, device, loss_fn, optimizer):\n    validation_loss_hist, validation_accuracy_hist = [], []\n    validation_loss, validation_accuracy = 0, 0\n    model.eval()\n    with torch.no_grad():\n        for x_batch, y_batch in validation_data_loader:\n            x_batch = x_batch.to(device)\n<fim_suffix>\n            validation_loss += loss.item()*y_batch.size(0)\n            is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n            validation_accuracy += is_prediction_correct.sum().cpu()\n    validation_loss /= len(validation_data_loader.dataset)\n    validation_accuracy /= len(validation_data_loader.dataset)\n    validation_loss_hist.append(validation_loss)\n    validation_accuracy_hist.append(validation_accuracy)\n    print(f'Epoch {epoch+1} validation accuracy: {validation_accuracy:.4f}')<fim_middle>            y_batch = y_batch.to(device)<|endoftext|>",
+        "predicted_fim_middle": "            y_batch = y_batch.to(device)"
+    },
+    {
+        "input": "<fim_prefix>def test(model, testing_data_loader, device, loss_fn, optimizer):\n  testing_accuracy = 0\n<fim_suffix>\n      for x_batch, y_batch in testing_data_loader:\n          x_batch = x_batch.to(device)\n          y_batch = y_batch.to(device)\n          prediction = model(x_batch)[:, 0]\n          is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n          testing_accuracy += is_prediction_correct.sum().cpu()\n  testing_accuracy /= len(testing_data_loader.dataset)\n  print(f'Test accuracy: {testing_accuracy:.4f}')<fim_middle>",
+        "gt_fim_middle": "  model.eval()\n  with torch.no_grad():",
+        "output": "<fim_prefix>def test(model, testing_data_loader, device, loss_fn, optimizer):\n  testing_accuracy = 0\n<fim_suffix>\n      for x_batch, y_batch in testing_data_loader:\n          x_batch = x_batch.to(device)\n          y_batch = y_batch.to(device)\n          prediction = model(x_batch)[:, 0]\n          is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()\n          testing_accuracy += is_prediction_correct.sum().cpu()\n  testing_accuracy /= len(testing_data_loader.dataset)\n  print(f'Test accuracy: {testing_accuracy:.4f}')<fim_middle>    for i, (x_batch, y_batch) in enumerate(testing_data_loader):<|endoftext|>",
+        "predicted_fim_middle": "    for i, (x_batch, y_batch) in enumerate(testing_data_loader):"
+    },
+    {
+        "input": "<fim_prefix>def label_encode_data(train_data, test_data):\n    encoder = LabelEncoder()\n<fim_suffix>\n    test_data['region'] = encoder.transform(test_data['region'])\n    return train_data, test_data<fim_middle>",
+        "gt_fim_middle": "    train_data['region'] = encoder.fit_transform(train_data['region'])",
+        "output": "<fim_prefix>def label_encode_data(train_data, test_data):\n    encoder = LabelEncoder()\n<fim_suffix>\n    test_data['region'] = encoder.transform(test_data['region'])\n    return train_data, test_data<fim_middle>    train_data['label'] = encoder.fit_transform(train_data['label'])<|endoftext|>",
+        "predicted_fim_middle": "    train_data['label'] = encoder.fit_transform(train_data['label'])"
+    },
+    {
+        "input": "<fim_prefix>def preprocess_data(train_data, test_data):\n    train_data = train_data.drop(columns=['Surface Area'])\n    test_data = test_data.drop(columns=[ 'Surface Area'])\n<fim_suffix>\n    train_data = train_data.dropna().reset_index(drop=True)\n    return train_data, test_data<fim_middle>",
+        "gt_fim_middle": "    train_data['GDP per Capita'] = train_data['GDP per Capita'].fillna(train_data['GDP per Capita'].mean())",
+        "output": "<fim_prefix>def preprocess_data(train_data, test_data):\n    train_data = train_data.drop(columns=['Surface Area'])\n    test_data = test_data.drop(columns=[ 'Surface Area'])\n<fim_suffix>\n    train_data = train_data.dropna().reset_index(drop=True)\n    return train_data, test_data<fim_middle>    # print('train data shape:', train_data.shape)\n    # print('test data shape:', test_data.shape)<|endoftext|>",
+        "predicted_fim_middle": "    # print('train data shape:', train_data.shape)\n    # print('test data shape:', test_data.shape)"
+    },
+    {
+        "input": "<fim_prefix>def get_x_y(train_data, test_data):\n    X_train = train_data.drop(columns=['region']) \n    y_train = train_data['region']\n    X_test = test_data.drop(columns=['region']) \n<fim_suffix>\n    return X_train, X_test, y_train, y_test<fim_middle>",
+        "gt_fim_middle": "    y_test = test_data['region']",
+        "output": "<fim_prefix>def get_x_y(train_data, test_data):\n    X_train = train_data.drop(columns=['region']) \n    y_train = train_data['region']\n    X_test = test_data.drop(columns=['region']) \n<fim_suffix>\n    return X_train, X_test, y_train, y_test<fim_middle>    y_test = test_data['region']<|endoftext|>",
+        "predicted_fim_middle": "    y_test = test_data['region']"
+    },
+    {
+        "input": "<fim_prefix>def get_score(X_train, y_train, X_test, y_test):\n    gmm = GaussianMixture(n_components=4, random_state=31, covariance_type='tied', init_params='random_from_data')\n    gmm.fit(X_train)\n<fim_suffix>\n    return v_measure_score(y_test, y_pred)<fim_middle>",
+        "gt_fim_middle": "    y_pred = gmm.predict(X_test)",
+        "output": "<fim_prefix>def get_score(X_train, y_train, X_test, y_test):\n    gmm = GaussianMixture(n_components=4, random_state=31, covariance_type='tied', init_params='random_from_data')\n    gmm.fit(X_train)\n<fim_suffix>\n    return v_measure_score(y_test, y_pred)<fim_middle>    score = gmm.predict(X_test)\n\n    return score\n\n\ndef measure_v_measure(y_true, y_pred):<|endoftext|>",
+        "predicted_fim_middle": "    score = gmm.predict(X_test)\n\n    return score\n\n\ndef measure_v_measure(y_true, y_pred):"
+    },
+    {
+        "input": "<fim_prefix>def load_and_group_data_by_image(answers_file_path, questions_file_path):\n    answers_data = load_json_data(answers_file_path)\n    questions_data = load_json_data(questions_file_path)\n    answers_by_image = defaultdict(list)\n    for answer in answers_data:\n        answers_by_image[answer['image_id']].append(answer)\n    questions_by_image = defaultdict(list)\n<fim_suffix>\n        questions_by_image[question['image_id']].append(question)\n    return answers_by_image, questions_by_image<fim_middle>",
+        "gt_fim_middle": "    for question in questions_data[\"questions\"]:",
+        "output": "<fim_prefix>def load_and_group_data_by_image(answers_file_path, questions_file_path):\n    answers_data = load_json_data(answers_file_path)\n    questions_data = load_json_data(questions_file_path)\n    answers_by_image = defaultdict(list)\n    for answer in answers_data:\n        answers_by_image[answer['image_id']].append(answer)\n    questions_by_image = defaultdict(list)\n<fim_suffix>\n        questions_by_image[question['image_id']].append(question)\n    return answers_by_image, questions_by_image<fim_middle>    for question in questions_data:<|endoftext|>",
+        "predicted_fim_middle": "    for question in questions_data:"
+    },
+    {
+        "input": "<fim_prefix>def get_disc_loss(real_content, fake_content, disc_content, adversarial_criterion):\n    disc_fake_content_hat = disc_content(fake_content.detach())\n    disc_fake_content_loss = adversarial_criterion(disc_fake_content_hat, torch.zeros_like(disc_fake_content_hat))\n<fim_suffix>\n    disc_real_content_loss = adversarial_criterion(disc_real_content_hat, torch.ones_like(disc_real_content_hat))\n    return (disc_fake_content_loss + disc_real_content_loss) / 2<fim_middle>",
+        "gt_fim_middle": "    disc_real_content_hat = disc_content(real_content)",
+        "output": "<fim_prefix>def get_disc_loss(real_content, fake_content, disc_content, adversarial_criterion):\n    disc_fake_content_hat = disc_content(fake_content.detach())\n    disc_fake_content_loss = adversarial_criterion(disc_fake_content_hat, torch.zeros_like(disc_fake_content_hat))\n<fim_suffix>\n    disc_real_content_loss = adversarial_criterion(disc_real_content_hat, torch.ones_like(disc_real_content_hat))\n    return (disc_fake_content_loss + disc_real_content_loss) / 2<fim_middle>    disc_real_content_hat = disc_content(real_content.detach())<|endoftext|>",
+        "predicted_fim_middle": "    disc_real_content_hat = disc_content(real_content.detach())"
+    },
+    {
+        "input": "<fim_prefix>def load_pickle_data(pickle_file_path):\n    with open(pickle_file_path, 'rb') as f:\n<fim_suffix>\n    return data<fim_middle>",
+        "gt_fim_middle": "        data = pickle.load(f)",
+        "output": "<fim_prefix>def load_pickle_data(pickle_file_path):\n    with open(pickle_file_path, 'rb') as f:\n<fim_suffix>\n    return data<fim_middle>        data = pickle.load(f)<|endoftext|>",
+        "predicted_fim_middle": "        data = pickle.load(f)"
+    },
+    {
+        "input": "<fim_prefix>def load_json_data(json_file_path):\n    with open(json_file_path) as f:\n<fim_suffix>\n    return data<fim_middle>",
+        "gt_fim_middle": "        data = json.load(f)",
+        "output": "<fim_prefix>def load_json_data(json_file_path):\n    with open(json_file_path) as f:\n<fim_suffix>\n    return data<fim_middle>        data = json.load(f)<|endoftext|>",
+        "predicted_fim_middle": "        data = json.load(f)"
+    },
+    {
+        "input": "<fim_prefix>def load_yaml_data(config_path):\n    with open(config_path, 'r') as f:\n<fim_suffix>\n    return data<fim_middle>",
+        "gt_fim_middle": "        data = yaml.safe_load(f)",
+        "output": "<fim_prefix>def load_yaml_data(config_path):\n    with open(config_path, 'r') as f:\n<fim_suffix>\n    return data<fim_middle>        data = yaml.load(f)<|endoftext|>",
+        "predicted_fim_middle": "        data = yaml.load(f)"
+    }
+]

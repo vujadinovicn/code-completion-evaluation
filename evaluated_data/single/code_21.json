@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def load_and_group_data_by_image(answers_file_path, questions_file_path):\n    answers_data = load_json_data(answers_file_path)\n    questions_data = load_json_data(questions_file_path)\n    answers_by_image = defaultdict(list)\n    for answer in answers_data:\n        answers_by_image[answer['image_id']].append(answer)\n    questions_by_image = defaultdict(list)\n<fim_suffix>\n        questions_by_image[question['image_id']].append(question)\n    return answers_by_image, questions_by_image<fim_middle>",
+    "gt_fim_middle": "    for question in questions_data[\"questions\"]:",
+    "output": "<fim_prefix>def load_and_group_data_by_image(answers_file_path, questions_file_path):\n    answers_data = load_json_data(answers_file_path)\n    questions_data = load_json_data(questions_file_path)\n    answers_by_image = defaultdict(list)\n    for answer in answers_data:\n        answers_by_image[answer['image_id']].append(answer)\n    questions_by_image = defaultdict(list)\n<fim_suffix>\n        questions_by_image[question['image_id']].append(question)\n    return answers_by_image, questions_by_image<fim_middle>    for question in questions_data:<|endoftext|>",
+    "predicted_fim_middle": "    for question in questions_data:"
+}

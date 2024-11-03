@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def sum(array):\n    sum = 0\n<fim_suffix>\n        sum += element\n    return sum<fim_middle>",
+    "gt_fim_middle": "    for element in array:",
+    "output": "<fim_prefix>def sum(array):\n    sum = 0\n<fim_suffix>\n        sum += element\n    return sum<fim_middle>    for element in array:<|endoftext|>",
+    "predicted_fim_middle": "    for element in array:"
+}

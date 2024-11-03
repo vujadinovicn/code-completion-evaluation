@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def preprocess_data(train_data, test_data):\n    train_data = train_data.drop(columns=['Surface Area'])\n    test_data = test_data.drop(columns=[ 'Surface Area'])\n<fim_suffix>\n    train_data = train_data.dropna().reset_index(drop=True)\n    return train_data, test_data<fim_middle>",
+    "gt_fim_middle": "    train_data['GDP per Capita'] = train_data['GDP per Capita'].fillna(train_data['GDP per Capita'].mean())",
+    "output": "<fim_prefix>def preprocess_data(train_data, test_data):\n    train_data = train_data.drop(columns=['Surface Area'])\n    test_data = test_data.drop(columns=[ 'Surface Area'])\n<fim_suffix>\n    train_data = train_data.dropna().reset_index(drop=True)\n    return train_data, test_data<fim_middle>    # print('train data shape:', train_data.shape)\n    # print('test data shape:', test_data.shape)<|endoftext|>",
+    "predicted_fim_middle": "    # print('train data shape:', train_data.shape)\n    # print('test data shape:', test_data.shape)"
+}

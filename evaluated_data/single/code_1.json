@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def evaluation(points):\n    if points <= 54:\n        return 5\n    if points <= 64:\n        return 6\n    if points <= 74:\n        return 7\n    if points <= 84:\n        return 8\n<fim_suffix>\n        return 9\n    return 10<fim_middle>",
+    "gt_fim_middle": "    if points <= 94:",
+    "output": "<fim_prefix>def evaluation(points):\n    if points <= 54:\n        return 5\n    if points <= 64:\n        return 6\n    if points <= 74:\n        return 7\n    if points <= 84:\n        return 8\n<fim_suffix>\n        return 9\n    return 10<fim_middle>    if points <= 94:<|endoftext|>",
+    "predicted_fim_middle": "    if points <= 94:"
+}

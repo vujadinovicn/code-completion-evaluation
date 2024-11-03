@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def create_splitted_subsets(training_dataset, validation_dataset, testing_dataset):\n    training_dataset = Subset(training_dataset, torch.arange(21000))\n<fim_suffix>\n    testing_dataset  = Subset(testing_dataset , torch.arange(7000))\n    return training_dataset, validation_dataset, testing_dataset<fim_middle>",
+    "gt_fim_middle": "    validation_dataset = Subset(validation_dataset, torch.arange(7000))",
+    "output": "<fim_prefix>def create_splitted_subsets(training_dataset, validation_dataset, testing_dataset):\n    training_dataset = Subset(training_dataset, torch.arange(21000))\n<fim_suffix>\n    testing_dataset  = Subset(testing_dataset , torch.arange(7000))\n    return training_dataset, validation_dataset, testing_dataset<fim_middle>    validation_dataset = Subset(validation_dataset, torch.arange(21000))<|endoftext|>",
+    "predicted_fim_middle": "    validation_dataset = Subset(validation_dataset, torch.arange(21000))"
+}

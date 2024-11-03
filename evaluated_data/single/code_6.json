@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def palindrome(text):\n    text = text.lower()\n<fim_suffix>\n    for i in range(len(text) // 2):\n        if text[i] != text[-1 - i]:\n            is_palindrome = False\n    return is_palindrome<fim_middle>",
+    "gt_fim_middle": "    is_palindrome = True",
+    "output": "<fim_prefix>def palindrome(text):\n    text = text.lower()\n<fim_suffix>\n    for i in range(len(text) // 2):\n        if text[i] != text[-1 - i]:\n            is_palindrome = False\n    return is_palindrome<fim_middle>    is_palindrome = True<|endoftext|>",
+    "predicted_fim_middle": "    is_palindrome = True"
+}

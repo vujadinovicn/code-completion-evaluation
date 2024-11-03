@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def print_datasets_length(training_dataset, validation_dataset, testing_dataset):\n    print('Training set length:', len(training_dataset))\n<fim_suffix>\n    print('Testing set length:', len(testing_dataset))<fim_middle>",
+    "gt_fim_middle": "    print('Validation set length:', len(validation_dataset))",
+    "output": "<fim_prefix>def print_datasets_length(training_dataset, validation_dataset, testing_dataset):\n    print('Training set length:', len(training_dataset))\n<fim_suffix>\n    print('Testing set length:', len(testing_dataset))<fim_middle>    print('Validation set length:', len(validation_dataset))<|endoftext|>",
+    "predicted_fim_middle": "    print('Validation set length:', len(validation_dataset))"
+}

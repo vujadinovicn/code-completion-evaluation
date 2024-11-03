@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def minimum(array):\n    minimal = array[0]\n    for element in array:\n        if element<minimal:\n<fim_suffix>\n    return minimal<fim_middle>",
+    "gt_fim_middle": "            minimal = element",
+    "output": "<fim_prefix>def minimum(array):\n    minimal = array[0]\n    for element in array:\n        if element<minimal:\n<fim_suffix>\n    return minimal<fim_middle>            minimal=element<|endoftext|>",
+    "predicted_fim_middle": "            minimal=element"
+}

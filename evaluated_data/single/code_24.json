@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def load_json_data(json_file_path):\n    with open(json_file_path) as f:\n<fim_suffix>\n    return data<fim_middle>",
+    "gt_fim_middle": "        data = json.load(f)",
+    "output": "<fim_prefix>def load_json_data(json_file_path):\n    with open(json_file_path) as f:\n<fim_suffix>\n    return data<fim_middle>        data = json.load(f)<|endoftext|>",
+    "predicted_fim_middle": "        data = json.load(f)"
+}

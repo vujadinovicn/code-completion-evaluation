@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def get_x_y(train_data, test_data):\n    X_train = train_data.drop(columns=['region']) \n    y_train = train_data['region']\n    X_test = test_data.drop(columns=['region']) \n<fim_suffix>\n    return X_train, X_test, y_train, y_test<fim_middle>",
+    "gt_fim_middle": "    y_test = test_data['region']",
+    "output": "<fim_prefix>def get_x_y(train_data, test_data):\n    X_train = train_data.drop(columns=['region']) \n    y_train = train_data['region']\n    X_test = test_data.drop(columns=['region']) \n<fim_suffix>\n    return X_train, X_test, y_train, y_test<fim_middle>    y_test = test_data['region']<|endoftext|>",
+    "predicted_fim_middle": "    y_test = test_data['region']"
+}

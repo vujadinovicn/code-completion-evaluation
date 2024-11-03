@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def get_score(X_train, y_train, X_test, y_test):\n    gmm = GaussianMixture(n_components=4, random_state=31, covariance_type='tied', init_params='random_from_data')\n    gmm.fit(X_train)\n<fim_suffix>\n    return v_measure_score(y_test, y_pred)<fim_middle>",
+    "gt_fim_middle": "    y_pred = gmm.predict(X_test)",
+    "output": "<fim_prefix>def get_score(X_train, y_train, X_test, y_test):\n    gmm = GaussianMixture(n_components=4, random_state=31, covariance_type='tied', init_params='random_from_data')\n    gmm.fit(X_train)\n<fim_suffix>\n    return v_measure_score(y_test, y_pred)<fim_middle>    score = gmm.predict(X_test)\n\n    return score\n\n\ndef measure_v_measure(y_true, y_pred):<|endoftext|>",
+    "predicted_fim_middle": "    score = gmm.predict(X_test)\n\n    return score\n\n\ndef measure_v_measure(y_true, y_pred):"
+}

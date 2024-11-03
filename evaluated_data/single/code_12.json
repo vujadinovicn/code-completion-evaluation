@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def get_data_loaders(training_dataset, validation_dataset, testing_dataset, batch_size):\n    training_data_loader = DataLoader(training_dataset, batch_size, shuffle=True)\n<fim_suffix>\n    testing_data_loader = DataLoader(testing_dataset, batch_size, shuffle=False)\n    return training_data_loader, validation_data_loader, testing_data_loader<fim_middle>",
+    "gt_fim_middle": "    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)",
+    "output": "<fim_prefix>def get_data_loaders(training_dataset, validation_dataset, testing_dataset, batch_size):\n    training_data_loader = DataLoader(training_dataset, batch_size, shuffle=True)\n<fim_suffix>\n    testing_data_loader = DataLoader(testing_dataset, batch_size, shuffle=False)\n    return training_data_loader, validation_data_loader, testing_data_loader<fim_middle>    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)<|endoftext|>",
+    "predicted_fim_middle": "    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)"
+}

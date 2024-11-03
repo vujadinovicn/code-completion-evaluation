@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def quadratic_equation(a, b, c):\n    D = b**2-4*a*c\n    if D>0:\n        square_root = sqrt(D)\n<fim_suffix>\n        x2 = (-b-square_root)/(2*a)\n        return x1, x2<fim_middle>",
+    "gt_fim_middle": "        x1 = (-b+square_root)/(2*a)",
+    "output": "<fim_prefix>def quadratic_equation(a, b, c):\n    D = b**2-4*a*c\n    if D>0:\n        square_root = sqrt(D)\n<fim_suffix>\n        x2 = (-b-square_root)/(2*a)\n        return x1, x2<fim_middle>        x1 = (b+sqrt(D))/(2*a)<|endoftext|>",
+    "predicted_fim_middle": "        x1 = (b+sqrt(D))/(2*a)"
+}

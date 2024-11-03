@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def is_leap(year):\n    if year % 400 == 0:\n        return True\n<fim_suffix>\n    if year % 4 == 0:\n        return True\n    return False<fim_middle>",
+    "gt_fim_middle": "    if year % 100 == 0:\n        return False",
+    "output": "<fim_prefix>def is_leap(year):\n    if year % 400 == 0:\n        return True\n<fim_suffix>\n    if year % 4 == 0:\n        return True\n    return False<fim_middle>    elif year % 100!= 0 and year % 400!= 0:<|endoftext|>",
+    "predicted_fim_middle": "    elif year % 100!= 0 and year % 400!= 0:"
+}
