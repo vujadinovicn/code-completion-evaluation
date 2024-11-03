@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def forward(self, x):\n        x0 = self.upfeature(x)\n        x1 = self.contract1(x0)\n        x2 = self.contract2(x1)\n        x3 = self.res0(x2)\n        x4 = self.res1(x3)\n        x5 = self.res2(x4)\n        x6 = self.res3(x5)\n        x7 = self.res4(x6)\n        x8 = self.res5(x7)\n        x9 = self.res6(x8)\n        x10 = self.res7(x9)\n<fim_suffix>\n        x12 = self.expand2(x11)\n        x13 = self.expand3(x12)\n        xn = self.downfeature(x13)\n        return self.tanh(xn)\nclass Discriminator(nn.Module):<fim_middle>",
+    "gt_fim_middle": "        x11 = self.res8(x10)",
+    "output": "<fim_prefix>def forward(self, x):\n        x0 = self.upfeature(x)\n        x1 = self.contract1(x0)\n        x2 = self.contract2(x1)\n        x3 = self.res0(x2)\n        x4 = self.res1(x3)\n        x5 = self.res2(x4)\n        x6 = self.res3(x5)\n        x7 = self.res4(x6)\n        x8 = self.res5(x7)\n        x9 = self.res6(x8)\n        x10 = self.res7(x9)\n<fim_suffix>\n        x12 = self.expand2(x11)\n        x13 = self.expand3(x12)\n        xn = self.downfeature(x13)\n        return self.tanh(xn)\nclass Discriminator(nn.Module):<fim_middle>        x11 = self.res8(x10)<|endoftext|>",
+    "predicted_fim_middle": "        x11 = self.res8(x10)"
+}

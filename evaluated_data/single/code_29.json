@@ -1,0 +1,6 @@
+{
+    "input": "<fim_prefix>def forward(self, x):\n        x0 = self.upfeature(x)\n<fim_suffix>\n        x2 = self.contract2(x1)\n        x3 = self.contract3(x2)\n        xn = self.final(x3)\n        return xn<fim_middle>",
+    "gt_fim_middle": "        x1 = self.contract1(x0)",
+    "output": "<fim_prefix>def forward(self, x):\n        x0 = self.upfeature(x)\n<fim_suffix>\n        x2 = self.contract2(x1)\n        x3 = self.contract3(x2)\n        xn = self.final(x3)\n        return xn<fim_middle>        x1 = self.downfeature(x0)<|endoftext|>",
+    "predicted_fim_middle": "        x1 = self.downfeature(x0)"
+}
