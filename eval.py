@@ -7,8 +7,8 @@ def generate_prompt(example):
     prompt = "<fim_prefix>" + example['prefix'] + "\n<fim_suffix>\n" + example['suffix'] + "<fim_middle>"
     return prompt
 
-def load_json_data(json_path='splitted_code.json'):
-    with open("splitted_code.json", "r") as json_file:
+def load_json_data(json_path='data_for_evaluation/splitted_code.json'):
+    with open(json_path, "r") as json_file:
         data = json.load(json_file)
     return data
 
@@ -50,8 +50,8 @@ if __name__ == "__main__":
         }
         all_evaluated_data.append(processed_data)
 
-        with open(os.path.join(evalutaed_data_path, "single", f"code_{i+1}.json"), "w") as json_file:
+        with open(os.path.join(evalutaed_data_path, "single", f"code2_{i+1}.json"), "w") as json_file:
             json.dump(processed_data, json_file, indent=4)
     
-    with open(os.path.join(evalutaed_data_path, "all", f"codes.json"), "w") as json_file:   
+    with open(os.path.join(evalutaed_data_path, "all", f"codes2.json"), "w") as json_file:   
             json.dump(all_evaluated_data, json_file, indent=4)

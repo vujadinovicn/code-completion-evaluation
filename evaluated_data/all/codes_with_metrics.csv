@@ -1,0 +1,544 @@
+input,gt_fim_middle,output,predicted_fim_middle,metrics
+"<fim_prefix>def evaluation(points):
+    if points <= 54:
+        return 5
+    if points <= 64:
+        return 6
+    if points <= 74:
+        return 7
+    if points <= 84:
+        return 8
+<fim_suffix>
+        return 9
+    return 10<fim_middle>",    if points <= 94:,"<fim_prefix>def evaluation(points):
+    if points <= 54:
+        return 5
+    if points <= 64:
+        return 6
+    if points <= 74:
+        return 7
+    if points <= 84:
+        return 8
+<fim_suffix>
+        return 9
+    return 10<fim_middle>    if points <= 94:<|endoftext|>",    if points <= 94:,"{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def is_leap(year):
+    if year % 400 == 0:
+        return True
+<fim_suffix>
+    if year % 4 == 0:
+        return True
+    return False<fim_middle>","    if year % 100 == 0:
+        return False","<fim_prefix>def is_leap(year):
+    if year % 400 == 0:
+        return True
+<fim_suffix>
+    if year % 4 == 0:
+        return True
+    return False<fim_middle>    elif year % 100!= 0 and year % 400!= 0:<|endoftext|>",    elif year % 100!= 0 and year % 400!= 0:,"{'chrf': 0.3555776125151569, 'exact_match': 0.0, 'jaccard': 0.23076923076923078, 'rouge': 0.37499999500000003}"
+"<fim_prefix>def minimum(array):
+    minimal = array[0]
+    for element in array:
+        if element<minimal:
+<fim_suffix>
+    return minimal<fim_middle>",            minimal = element,"<fim_prefix>def minimum(array):
+    minimal = array[0]
+    for element in array:
+        if element<minimal:
+<fim_suffix>
+    return minimal<fim_middle>            minimal=element<|endoftext|>",            minimal=element,"{'chrf': 1.0, 'exact_match': 0.0, 'jaccard': 0.0, 'rouge': 0.0}"
+"<fim_prefix>def maximum(array):
+    maximal = array[0]
+<fim_suffix>
+        if element > maximal:
+            maximal = element
+    return maximal<fim_middle>",    for element in array:,"<fim_prefix>def maximum(array):
+    maximal = array[0]
+<fim_suffix>
+        if element > maximal:
+            maximal = element
+    return maximal<fim_middle>    for element in array:<|endoftext|>",    for element in array:,"{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def sum(array):
+    sum = 0
+<fim_suffix>
+        sum += element
+    return sum<fim_middle>",    for element in array:,"<fim_prefix>def sum(array):
+    sum = 0
+<fim_suffix>
+        sum += element
+    return sum<fim_middle>    for element in array:<|endoftext|>",    for element in array:,"{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def palindrome(text):
+    text = text.lower()
+<fim_suffix>
+    for i in range(len(text) // 2):
+        if text[i] != text[-1 - i]:
+            is_palindrome = False
+    return is_palindrome<fim_middle>",    is_palindrome = True,"<fim_prefix>def palindrome(text):
+    text = text.lower()
+<fim_suffix>
+    for i in range(len(text) // 2):
+        if text[i] != text[-1 - i]:
+            is_palindrome = False
+    return is_palindrome<fim_middle>    is_palindrome = True<|endoftext|>",    is_palindrome = True,"{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def quadratic_equation(a, b, c):
+    D = b**2-4*a*c
+    if D>0:
+        square_root = sqrt(D)
+<fim_suffix>
+        x2 = (-b-square_root)/(2*a)
+        return x1, x2<fim_middle>",        x1 = (-b+square_root)/(2*a),"<fim_prefix>def quadratic_equation(a, b, c):
+    D = b**2-4*a*c
+    if D>0:
+        square_root = sqrt(D)
+<fim_suffix>
+        x2 = (-b-square_root)/(2*a)
+        return x1, x2<fim_middle>        x1 = (b+sqrt(D))/(2*a)<|endoftext|>",        x1 = (b+sqrt(D))/(2*a),"{'chrf': 0.4196941265734214, 'exact_match': 0.0, 'jaccard': 0.5, 'rouge': 0.6666666616666668}"
+"<fim_prefix>def download_datasets(dataset_path, training_transform, test_transform, extract_young):
+    training_dataset = torchvision.datasets.CelebA(dataset_path, split='train', target_type='attr', download=False, transform=training_transform, target_transform=extract_young)
+    validation_dataset = torchvision.datasets.CelebA(dataset_path, split='valid', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)
+<fim_suffix>
+    return training_dataset, validation_dataset, testing_dataset<fim_middle>","    testing_dataset = torchvision.datasets.CelebA(dataset_path, split='test', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)","<fim_prefix>def download_datasets(dataset_path, training_transform, test_transform, extract_young):
+    training_dataset = torchvision.datasets.CelebA(dataset_path, split='train', target_type='attr', download=False, transform=training_transform, target_transform=extract_young)
+    validation_dataset = torchvision.datasets.CelebA(dataset_path, split='valid', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)
+<fim_suffix>
+    return training_dataset, validation_dataset, testing_dataset<fim_middle>    testing_dataset = torchvision.datasets.CelebA(dataset_path, split='test', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)<|endoftext|>","    testing_dataset = torchvision.datasets.CelebA(dataset_path, split='test', target_type='attr', download=False, transform=test_transform, target_transform=extract_young)","{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def print_datasets_length(training_dataset, validation_dataset, testing_dataset):
+    print('Training set length:', len(training_dataset))
+<fim_suffix>
+    print('Testing set length:', len(testing_dataset))<fim_middle>","    print('Validation set length:', len(validation_dataset))","<fim_prefix>def print_datasets_length(training_dataset, validation_dataset, testing_dataset):
+    print('Training set length:', len(training_dataset))
+<fim_suffix>
+    print('Testing set length:', len(testing_dataset))<fim_middle>    print('Validation set length:', len(validation_dataset))<|endoftext|>","    print('Validation set length:', len(validation_dataset))","{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def create_splitted_subsets(training_dataset, validation_dataset, testing_dataset):
+    training_dataset = Subset(training_dataset, torch.arange(21000))
+<fim_suffix>
+    testing_dataset  = Subset(testing_dataset , torch.arange(7000))
+    return training_dataset, validation_dataset, testing_dataset<fim_middle>","    validation_dataset = Subset(validation_dataset, torch.arange(7000))","<fim_prefix>def create_splitted_subsets(training_dataset, validation_dataset, testing_dataset):
+    training_dataset = Subset(training_dataset, torch.arange(21000))
+<fim_suffix>
+    testing_dataset  = Subset(testing_dataset , torch.arange(7000))
+    return training_dataset, validation_dataset, testing_dataset<fim_middle>    validation_dataset = Subset(validation_dataset, torch.arange(21000))<|endoftext|>","    validation_dataset = Subset(validation_dataset, torch.arange(21000))","{'chrf': 0.9301747801729828, 'exact_match': 0.0, 'jaccard': 0.6, 'rouge': 0.7999999950000002}"
+"<fim_prefix>def print_splitted_datasets(training_dataset, validation_dataset, testing_dataset):
+    print('Training set:', len(training_dataset))
+<fim_suffix>
+    print('Testing set:', len(testing_dataset ))<fim_middle>","    print('Validation set:', len(validation_dataset))","<fim_prefix>def print_splitted_datasets(training_dataset, validation_dataset, testing_dataset):
+    print('Training set:', len(training_dataset))
+<fim_suffix>
+    print('Testing set:', len(testing_dataset ))<fim_middle>    print('Validation set:', len(validation_dataset))<|endoftext|>","    print('Validation set:', len(validation_dataset))","{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def get_data_loaders(training_dataset, validation_dataset, testing_dataset, batch_size):
+    training_data_loader = DataLoader(training_dataset, batch_size, shuffle=True)
+<fim_suffix>
+    testing_data_loader = DataLoader(testing_dataset, batch_size, shuffle=False)
+    return training_data_loader, validation_data_loader, testing_data_loader<fim_middle>","    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)","<fim_prefix>def get_data_loaders(training_dataset, validation_dataset, testing_dataset, batch_size):
+    training_data_loader = DataLoader(training_dataset, batch_size, shuffle=True)
+<fim_suffix>
+    testing_data_loader = DataLoader(testing_dataset, batch_size, shuffle=False)
+    return training_data_loader, validation_data_loader, testing_data_loader<fim_middle>    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)<|endoftext|>","    validation_data_loader = DataLoader(validation_dataset, batch_size, shuffle=False)","{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def create_model():
+    model = nn.Sequential()
+    model.add_module('conv1', nn.Conv2d(in_channels=3, out_channels=32, kernel_size=5, padding=1))
+    model.add_module('batchnorm1', nn.BatchNorm2d(32))
+    model.add_module('relu1', nn.ReLU())
+<fim_suffix>
+    model.add_module('pool2', nn.MaxPool2d(kernel_size=2))
+    model.add_module('dropout2', nn.Dropout(p=0.4))
+    model.add_module('conv3', nn.Conv2d(in_channels=64, out_channels=128, kernel_size=5, padding=1))
+    model.add_module('batchnorm3', nn.BatchNorm2d(128))
+    model.add_module('relu3', nn.ReLU())
+    model.add_module('pool3', nn.MaxPool2d(kernel_size=2))
+    model.add_module('conv4', nn.Conv2d(in_channels=128, out_channels=256, kernel_size=5, padding=1))
+    model.add_module('batchnorm4', nn.BatchNorm2d(256))
+    model.add_module('relu4', nn.ReLU())
+    model.add_module('pool4', nn.AvgPool2d(kernel_size=4, padding=0))
+    model.add_module('flatten', nn.Flatten())
+    model.add_module('fc', nn.Linear(256, 1))
+    model.add_module('sigmoid', nn.Sigmoid())
+    return model<fim_middle>","    model.add_module('pool1', nn.MaxPool2d(kernel_size=2))
+    model.add_module('dropout1', nn.Dropout(p=0.6))
+    model.add_module('conv2', nn.Conv2d(in_channels=32, out_channels=64, kernel_size=5, padding=1))
+    model.add_module('batchnorm2', nn.BatchNorm2d(64))
+    model.add_module('relu2', nn.ReLU())","<fim_prefix>def create_model():
+    model = nn.Sequential()
+    model.add_module('conv1', nn.Conv2d(in_channels=3, out_channels=32, kernel_size=5, padding=1))
+    model.add_module('batchnorm1', nn.BatchNorm2d(32))
+    model.add_module('relu1', nn.ReLU())
+<fim_suffix>
+    model.add_module('pool2', nn.MaxPool2d(kernel_size=2))
+    model.add_module('dropout2', nn.Dropout(p=0.4))
+    model.add_module('conv3', nn.Conv2d(in_channels=64, out_channels=128, kernel_size=5, padding=1))
+    model.add_module('batchnorm3', nn.BatchNorm2d(128))
+    model.add_module('relu3', nn.ReLU())
+    model.add_module('pool3', nn.MaxPool2d(kernel_size=2))
+    model.add_module('conv4', nn.Conv2d(in_channels=128, out_channels=256, kernel_size=5, padding=1))
+    model.add_module('batchnorm4', nn.BatchNorm2d(256))
+    model.add_module('relu4', nn.ReLU())
+    model.add_module('pool4', nn.AvgPool2d(kernel_size=4, padding=0))
+    model.add_module('flatten', nn.Flatten())
+    model.add_module('fc', nn.Linear(256, 1))
+    model.add_module('sigmoid', nn.Sigmoid())
+    return model<fim_middle>    model.add_module('maxpool1', nn.MaxPool2d(kernel_size=2))<|endoftext|>","    model.add_module('maxpool1', nn.MaxPool2d(kernel_size=2))","{'chrf': 0.4972971989849867, 'exact_match': 0.0, 'jaccard': 0.07142857142857142, 'rouge': 0.2999999968}"
+"<fim_prefix>def train(model, training_data_loader, epoch, device, loss_fn, optimizer):
+    training_loss_hist, training_accuracy_hist = [], []
+    training_loss, training_accuracy = 0, 0
+    model.train()
+    for x_batch, y_batch in training_data_loader:
+        x_batch = x_batch.to(device)
+        y_batch = y_batch.to(device)
+<fim_suffix>
+        training_loss += loss.item()*y_batch.size(0)
+        is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()
+        training_accuracy += is_prediction_correct.sum().cpu()
+    training_loss /= len(training_data_loader.dataset)
+    training_accuracy /= len(training_data_loader.dataset)
+    training_loss_hist.append(training_loss)
+    training_accuracy_hist.append(training_accuracy)
+    print(f'Epoch {epoch+1} train accuracy: {training_accuracy:.4f}')<fim_middle>","        prediction = model(x_batch)[:, 0]
+        loss = loss_fn(prediction, y_batch.float())
+        loss.backward()
+        optimizer.step()
+        optimizer.zero_grad()","<fim_prefix>def train(model, training_data_loader, epoch, device, loss_fn, optimizer):
+    training_loss_hist, training_accuracy_hist = [], []
+    training_loss, training_accuracy = 0, 0
+    model.train()
+    for x_batch, y_batch in training_data_loader:
+        x_batch = x_batch.to(device)
+        y_batch = y_batch.to(device)
+<fim_suffix>
+        training_loss += loss.item()*y_batch.size(0)
+        is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()
+        training_accuracy += is_prediction_correct.sum().cpu()
+    training_loss /= len(training_data_loader.dataset)
+    training_accuracy /= len(training_data_loader.dataset)
+    training_loss_hist.append(training_loss)
+    training_accuracy_hist.append(training_accuracy)
+    print(f'Epoch {epoch+1} train accuracy: {training_accuracy:.4f}')<fim_middle>        optimizer.zero_grad()<|endoftext|>",        optimizer.zero_grad(),"{'chrf': 0.4777067274248201, 'exact_match': 0.0, 'jaccard': 0.1, 'rouge': 0.2857142832653061}"
+"<fim_prefix>def eval(model, validation_data_loader, epoch, device, loss_fn, optimizer):
+    validation_loss_hist, validation_accuracy_hist = [], []
+    validation_loss, validation_accuracy = 0, 0
+    model.eval()
+    with torch.no_grad():
+        for x_batch, y_batch in validation_data_loader:
+            x_batch = x_batch.to(device)
+<fim_suffix>
+            validation_loss += loss.item()*y_batch.size(0)
+            is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()
+            validation_accuracy += is_prediction_correct.sum().cpu()
+    validation_loss /= len(validation_data_loader.dataset)
+    validation_accuracy /= len(validation_data_loader.dataset)
+    validation_loss_hist.append(validation_loss)
+    validation_accuracy_hist.append(validation_accuracy)
+    print(f'Epoch {epoch+1} validation accuracy: {validation_accuracy:.4f}')<fim_middle>","            y_batch = y_batch.to(device)
+            prediction = model(x_batch)[:, 0]
+            loss = loss_fn(prediction, y_batch.float())","<fim_prefix>def eval(model, validation_data_loader, epoch, device, loss_fn, optimizer):
+    validation_loss_hist, validation_accuracy_hist = [], []
+    validation_loss, validation_accuracy = 0, 0
+    model.eval()
+    with torch.no_grad():
+        for x_batch, y_batch in validation_data_loader:
+            x_batch = x_batch.to(device)
+<fim_suffix>
+            validation_loss += loss.item()*y_batch.size(0)
+            is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()
+            validation_accuracy += is_prediction_correct.sum().cpu()
+    validation_loss /= len(validation_data_loader.dataset)
+    validation_accuracy /= len(validation_data_loader.dataset)
+    validation_loss_hist.append(validation_loss)
+    validation_accuracy_hist.append(validation_accuracy)
+    print(f'Epoch {epoch+1} validation accuracy: {validation_accuracy:.4f}')<fim_middle>            y_batch = y_batch.to(device)<|endoftext|>",            y_batch = y_batch.to(device),"{'chrf': 0.6263557756263005, 'exact_match': 0.0, 'jaccard': 0.3333333333333333, 'rouge': 0.4999999962500001}"
+"<fim_prefix>def test(model, testing_data_loader, device, loss_fn, optimizer):
+  testing_accuracy = 0
+<fim_suffix>
+      for x_batch, y_batch in testing_data_loader:
+          x_batch = x_batch.to(device)
+          y_batch = y_batch.to(device)
+          prediction = model(x_batch)[:, 0]
+          is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()
+          testing_accuracy += is_prediction_correct.sum().cpu()
+  testing_accuracy /= len(testing_data_loader.dataset)
+  print(f'Test accuracy: {testing_accuracy:.4f}')<fim_middle>","  model.eval()
+  with torch.no_grad():","<fim_prefix>def test(model, testing_data_loader, device, loss_fn, optimizer):
+  testing_accuracy = 0
+<fim_suffix>
+      for x_batch, y_batch in testing_data_loader:
+          x_batch = x_batch.to(device)
+          y_batch = y_batch.to(device)
+          prediction = model(x_batch)[:, 0]
+          is_prediction_correct = ((prediction>=0.5).float() == y_batch).float()
+          testing_accuracy += is_prediction_correct.sum().cpu()
+  testing_accuracy /= len(testing_data_loader.dataset)
+  print(f'Test accuracy: {testing_accuracy:.4f}')<fim_middle>    for i, (x_batch, y_batch) in enumerate(testing_data_loader):<|endoftext|>","    for i, (x_batch, y_batch) in enumerate(testing_data_loader):","{'chrf': 0.10622207647877546, 'exact_match': 0.0, 'jaccard': 0.0, 'rouge': 0.0}"
+"<fim_prefix>def label_encode_data(train_data, test_data):
+    encoder = LabelEncoder()
+<fim_suffix>
+    test_data['region'] = encoder.transform(test_data['region'])
+    return train_data, test_data<fim_middle>",    train_data['region'] = encoder.fit_transform(train_data['region']),"<fim_prefix>def label_encode_data(train_data, test_data):
+    encoder = LabelEncoder()
+<fim_suffix>
+    test_data['region'] = encoder.transform(test_data['region'])
+    return train_data, test_data<fim_middle>    train_data['label'] = encoder.fit_transform(train_data['label'])<|endoftext|>",    train_data['label'] = encoder.fit_transform(train_data['label']),"{'chrf': 0.7550705496792862, 'exact_match': 0.0, 'jaccard': 0.2, 'rouge': 0.4999999950000001}"
+"<fim_prefix>def preprocess_data(train_data, test_data):
+    train_data = train_data.drop(columns=['Surface Area'])
+    test_data = test_data.drop(columns=[ 'Surface Area'])
+<fim_suffix>
+    train_data = train_data.dropna().reset_index(drop=True)
+    return train_data, test_data<fim_middle>",    train_data['GDP per Capita'] = train_data['GDP per Capita'].fillna(train_data['GDP per Capita'].mean()),"<fim_prefix>def preprocess_data(train_data, test_data):
+    train_data = train_data.drop(columns=['Surface Area'])
+    test_data = test_data.drop(columns=[ 'Surface Area'])
+<fim_suffix>
+    train_data = train_data.dropna().reset_index(drop=True)
+    return train_data, test_data<fim_middle>    # print('train data shape:', train_data.shape)
+    # print('test data shape:', test_data.shape)<|endoftext|>","    # print('train data shape:', train_data.shape)
+    # print('test data shape:', test_data.shape)","{'chrf': 0.25783048923997065, 'exact_match': 0.0, 'jaccard': 0.0, 'rouge': 0.0}"
+"<fim_prefix>def get_x_y(train_data, test_data):
+    X_train = train_data.drop(columns=['region']) 
+    y_train = train_data['region']
+    X_test = test_data.drop(columns=['region']) 
+<fim_suffix>
+    return X_train, X_test, y_train, y_test<fim_middle>",    y_test = test_data['region'],"<fim_prefix>def get_x_y(train_data, test_data):
+    X_train = train_data.drop(columns=['region']) 
+    y_train = train_data['region']
+    X_test = test_data.drop(columns=['region']) 
+<fim_suffix>
+    return X_train, X_test, y_train, y_test<fim_middle>    y_test = test_data['region']<|endoftext|>",    y_test = test_data['region'],"{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def get_score(X_train, y_train, X_test, y_test):
+    gmm = GaussianMixture(n_components=4, random_state=31, covariance_type='tied', init_params='random_from_data')
+    gmm.fit(X_train)
+<fim_suffix>
+    return v_measure_score(y_test, y_pred)<fim_middle>",    y_pred = gmm.predict(X_test),"<fim_prefix>def get_score(X_train, y_train, X_test, y_test):
+    gmm = GaussianMixture(n_components=4, random_state=31, covariance_type='tied', init_params='random_from_data')
+    gmm.fit(X_train)
+<fim_suffix>
+    return v_measure_score(y_test, y_pred)<fim_middle>    score = gmm.predict(X_test)
+
+    return score
+
+
+def measure_v_measure(y_true, y_pred):<|endoftext|>","    score = gmm.predict(X_test)
+
+    return score
+
+
+def measure_v_measure(y_true, y_pred):","{'chrf': 0.3469886412842201, 'exact_match': 0.0, 'jaccard': 0.25, 'rouge': 0.49999999555555563}"
+"<fim_prefix>def load_and_group_data_by_image(answers_file_path, questions_file_path):
+    answers_data = load_json_data(answers_file_path)
+    questions_data = load_json_data(questions_file_path)
+    answers_by_image = defaultdict(list)
+    for answer in answers_data:
+        answers_by_image[answer['image_id']].append(answer)
+    questions_by_image = defaultdict(list)
+<fim_suffix>
+        questions_by_image[question['image_id']].append(question)
+    return answers_by_image, questions_by_image<fim_middle>","    for question in questions_data[""questions""]:","<fim_prefix>def load_and_group_data_by_image(answers_file_path, questions_file_path):
+    answers_data = load_json_data(answers_file_path)
+    questions_data = load_json_data(questions_file_path)
+    answers_by_image = defaultdict(list)
+    for answer in answers_data:
+        answers_by_image[answer['image_id']].append(answer)
+    questions_by_image = defaultdict(list)
+<fim_suffix>
+        questions_by_image[question['image_id']].append(question)
+    return answers_by_image, questions_by_image<fim_middle>    for question in questions_data:<|endoftext|>",    for question in questions_data:,"{'chrf': 0.8769473106905594, 'exact_match': 0.0, 'jaccard': 0.6, 'rouge': 0.749999995}"
+"<fim_prefix>def __init__(self, input_channels, output_channels, hidden_channels=64):
+        super(Generator, self).__init__()
+        self.upfeature = FeatureMapBlock(input_channels, hidden_channels)
+        self.contract1 = EncoderBlock(hidden_channels)
+        self.contract2 = EncoderBlock(hidden_channels * 2)
+        res_mult = 4
+<fim_suffix>
+        self.res3 = ResidualBlock(hidden_channels * res_mult)
+        self.res4 = ResidualBlock(hidden_channels * res_mult)
+        self.res5 = ResidualBlock(hidden_channels * res_mult)
+        self.res6 = ResidualBlock(hidden_channels * res_mult)
+        self.res7 = ResidualBlock(hidden_channels * res_mult)
+        self.res8 = ResidualBlock(hidden_channels * res_mult)
+        self.expand2 = DecoderBlock(hidden_channels * 4)
+        self.expand3 = DecoderBlock(hidden_channels * 2)
+        self.downfeature = FeatureMapBlock(hidden_channels, output_channels)
+        self.tanh = nn.Tanh()<fim_middle>","        self.res0 = ResidualBlock(hidden_channels * res_mult)
+        self.res1 = ResidualBlock(hidden_channels * res_mult)
+        self.res2 = ResidualBlock(hidden_channels * res_mult)","<fim_prefix>def __init__(self, input_channels, output_channels, hidden_channels=64):
+        super(Generator, self).__init__()
+        self.upfeature = FeatureMapBlock(input_channels, hidden_channels)
+        self.contract1 = EncoderBlock(hidden_channels)
+        self.contract2 = EncoderBlock(hidden_channels * 2)
+        res_mult = 4
+<fim_suffix>
+        self.res3 = ResidualBlock(hidden_channels * res_mult)
+        self.res4 = ResidualBlock(hidden_channels * res_mult)
+        self.res5 = ResidualBlock(hidden_channels * res_mult)
+        self.res6 = ResidualBlock(hidden_channels * res_mult)
+        self.res7 = ResidualBlock(hidden_channels * res_mult)
+        self.res8 = ResidualBlock(hidden_channels * res_mult)
+        self.expand2 = DecoderBlock(hidden_channels * 4)
+        self.expand3 = DecoderBlock(hidden_channels * 2)
+        self.downfeature = FeatureMapBlock(hidden_channels, output_channels)
+        self.tanh = nn.Tanh()<fim_middle>        for i in range(0, len(output_channels), res_mult):
+            self.upfeature.add_module('conv%d' % (i + 1),
+                                        ConvModule(hidden_channels, output_channels[i], kernel_size=(3, 3)))
+
+        self.contract3 = EncoderBlock(hidden_channels * 2)
+        self.contract4 = EncoderBlock(hidden_channels * 2)
+        self.contract5 = EncoderBlock(hidden_channels * 2)
+        self.contract6 = EncoderBlock(hidden_channels * 2)
+        self.contract7 = EncoderBlock(hidden_channels * 2)
+        self.contract8 = EncoderBlock(hidden_channels * 2)
+        self.contract9 = EncoderBlock(hidden_channels * 2)
+        self.contract10 = EncoderBlock(hidden_channels * 2)
+        self.contract11 = EncoderBlock(hidden_channels * 2)
+        self.contract12 = EncoderBlock(hidden_channels * 2)
+        self.contract13 = EncoderBlock(hidden_channels * 2)
+        self.contract14 = EncoderBlock(hidden_channels *","        for i in range(0, len(output_channels), res_mult):
+            self.upfeature.add_module('conv%d' % (i + 1),
+                                        ConvModule(hidden_channels, output_channels[i], kernel_size=(3, 3)))
+
+        self.contract3 = EncoderBlock(hidden_channels * 2)
+        self.contract4 = EncoderBlock(hidden_channels * 2)
+        self.contract5 = EncoderBlock(hidden_channels * 2)
+        self.contract6 = EncoderBlock(hidden_channels * 2)
+        self.contract7 = EncoderBlock(hidden_channels * 2)
+        self.contract8 = EncoderBlock(hidden_channels * 2)
+        self.contract9 = EncoderBlock(hidden_channels * 2)
+        self.contract10 = EncoderBlock(hidden_channels * 2)
+        self.contract11 = EncoderBlock(hidden_channels * 2)
+        self.contract12 = EncoderBlock(hidden_channels * 2)
+        self.contract13 = EncoderBlock(hidden_channels * 2)
+        self.contract14 = EncoderBlock(hidden_channels *","{'chrf': 0.14380918363886736, 'exact_match': 0.0, 'jaccard': 0.05555555555555555, 'rouge': 0.1463414602736467}"
+"<fim_prefix>def forward(self, x):
+        x0 = self.upfeature(x)
+        x1 = self.contract1(x0)
+        x2 = self.contract2(x1)
+        x3 = self.res0(x2)
+        x4 = self.res1(x3)
+        x5 = self.res2(x4)
+        x6 = self.res3(x5)
+        x7 = self.res4(x6)
+        x8 = self.res5(x7)
+        x9 = self.res6(x8)
+        x10 = self.res7(x9)
+<fim_suffix>
+        x12 = self.expand2(x11)
+        x13 = self.expand3(x12)
+        xn = self.downfeature(x13)
+        return self.tanh(xn)
+class Discriminator(nn.Module):<fim_middle>",        x11 = self.res8(x10),"<fim_prefix>def forward(self, x):
+        x0 = self.upfeature(x)
+        x1 = self.contract1(x0)
+        x2 = self.contract2(x1)
+        x3 = self.res0(x2)
+        x4 = self.res1(x3)
+        x5 = self.res2(x4)
+        x6 = self.res3(x5)
+        x7 = self.res4(x6)
+        x8 = self.res5(x7)
+        x9 = self.res6(x8)
+        x10 = self.res7(x9)
+<fim_suffix>
+        x12 = self.expand2(x11)
+        x13 = self.expand3(x12)
+        xn = self.downfeature(x13)
+        return self.tanh(xn)
+class Discriminator(nn.Module):<fim_middle>        x11 = self.res8(x10)<|endoftext|>",        x11 = self.res8(x10),"{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def __init__(self, input_channels, hidden_channels=64):
+        super(Discriminator, self).__init__()
+        self.upfeature = FeatureMapBlock(input_channels, hidden_channels)
+        self.contract1 = EncoderBlock(hidden_channels, use_bn=False, kernel_size=4, activation='lrelu')
+        self.contract2 = EncoderBlock(hidden_channels * 2, kernel_size=4, activation='lrelu')
+<fim_suffix>
+        self.final = nn.Conv2d(hidden_channels * 8, 1, kernel_size=1)<fim_middle>","        self.contract3 = EncoderBlock(hidden_channels * 4, kernel_size=4, activation='lrelu')","<fim_prefix>def __init__(self, input_channels, hidden_channels=64):
+        super(Discriminator, self).__init__()
+        self.upfeature = FeatureMapBlock(input_channels, hidden_channels)
+        self.contract1 = EncoderBlock(hidden_channels, use_bn=False, kernel_size=4, activation='lrelu')
+        self.contract2 = EncoderBlock(hidden_channels * 2, kernel_size=4, activation='lrelu')
+<fim_suffix>
+        self.final = nn.Conv2d(hidden_channels * 8, 1, kernel_size=1)<fim_middle>        self.contract3 = EncoderBlock(hidden_channels * 4, kernel_size=4, activation='lrelu')
+
+        self.conv1 = nn.Sequential(
+            nn.ConvTranspose2d(hidden_channels, 512, kernel_size=4),
+            nn.BatchNorm2d(512),
+            nn.ReLU(),
+            nn.ConvTranspose2d(512, 256, kernel_size=4),
+            nn.BatchNorm2d(256),
+            nn.ReLU()
+        )
+        self.conv2 = nn.Sequential(
+            nn.ConvTranspose2d(256, 128, kernel_size=4),
+            nn.BatchNorm2d(128),
+            nn.ReLU(),
+            nn.ConvTranspose2d(128, 64, kernel_size=4),
+            nn.BatchNorm2d(64),
+            nn.ReLU()
+        )
+
+    def forward(self, x):
+        out = self.upfeature(x)
+        contract1 = self.contract1(out)
+        contract2 = self.contract2(contract1)
+        contract3 = self.contract3(contract","        self.contract3 = EncoderBlock(hidden_channels * 4, kernel_size=4, activation='lrelu')
+
+        self.conv1 = nn.Sequential(
+            nn.ConvTranspose2d(hidden_channels, 512, kernel_size=4),
+            nn.BatchNorm2d(512),
+            nn.ReLU(),
+            nn.ConvTranspose2d(512, 256, kernel_size=4),
+            nn.BatchNorm2d(256),
+            nn.ReLU()
+        )
+        self.conv2 = nn.Sequential(
+            nn.ConvTranspose2d(256, 128, kernel_size=4),
+            nn.BatchNorm2d(128),
+            nn.ReLU(),
+            nn.ConvTranspose2d(128, 64, kernel_size=4),
+            nn.BatchNorm2d(64),
+            nn.ReLU()
+        )
+
+    def forward(self, x):
+        out = self.upfeature(x)
+        contract1 = self.contract1(out)
+        contract2 = self.contract2(contract1)
+        contract3 = self.contract3(contract","{'chrf': 0.1646838772618061, 'exact_match': 0.0, 'jaccard': 0.1891891891891892, 'rouge': 0.34782608408317583}"
+"<fim_prefix>def forward(self, x):
+        x0 = self.upfeature(x)
+<fim_suffix>
+        x2 = self.contract2(x1)
+        x3 = self.contract3(x2)
+        xn = self.final(x3)
+        return xn<fim_middle>",        x1 = self.contract1(x0),"<fim_prefix>def forward(self, x):
+        x0 = self.upfeature(x)
+<fim_suffix>
+        x2 = self.contract2(x1)
+        x3 = self.contract3(x2)
+        xn = self.final(x3)
+        return xn<fim_middle>        x1 = self.downfeature(x0)<|endoftext|>",        x1 = self.downfeature(x0),"{'chrf': 0.38252994682871083, 'exact_match': 0.0, 'jaccard': 0.5, 'rouge': 0.749999995}"
+"<fim_prefix>def get_disc_loss(real_content, fake_content, disc_content, adversarial_criterion):
+    disc_fake_content_hat = disc_content(fake_content.detach())
+    disc_fake_content_loss = adversarial_criterion(disc_fake_content_hat, torch.zeros_like(disc_fake_content_hat))
+<fim_suffix>
+    disc_real_content_loss = adversarial_criterion(disc_real_content_hat, torch.ones_like(disc_real_content_hat))
+    return (disc_fake_content_loss + disc_real_content_loss) / 2<fim_middle>",    disc_real_content_hat = disc_content(real_content),"<fim_prefix>def get_disc_loss(real_content, fake_content, disc_content, adversarial_criterion):
+    disc_fake_content_hat = disc_content(fake_content.detach())
+    disc_fake_content_loss = adversarial_criterion(disc_fake_content_hat, torch.zeros_like(disc_fake_content_hat))
+<fim_suffix>
+    disc_real_content_loss = adversarial_criterion(disc_real_content_hat, torch.ones_like(disc_real_content_hat))
+    return (disc_fake_content_loss + disc_real_content_loss) / 2<fim_middle>    disc_real_content_hat = disc_content(real_content.detach())<|endoftext|>",    disc_real_content_hat = disc_content(real_content.detach()),"{'chrf': 0.8472625842737461, 'exact_match': 0.0, 'jaccard': 0.5, 'rouge': 0.5714285665306124}"
+"<fim_prefix>def load_pickle_data(pickle_file_path):
+    with open(pickle_file_path, 'rb') as f:
+<fim_suffix>
+    return data<fim_middle>",        data = pickle.load(f),"<fim_prefix>def load_pickle_data(pickle_file_path):
+    with open(pickle_file_path, 'rb') as f:
+<fim_suffix>
+    return data<fim_middle>        data = pickle.load(f)<|endoftext|>",        data = pickle.load(f),"{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def load_json_data(json_file_path):
+    with open(json_file_path) as f:
+<fim_suffix>
+    return data<fim_middle>",        data = json.load(f),"<fim_prefix>def load_json_data(json_file_path):
+    with open(json_file_path) as f:
+<fim_suffix>
+    return data<fim_middle>        data = json.load(f)<|endoftext|>",        data = json.load(f),"{'chrf': 1.0, 'exact_match': 1.0, 'jaccard': 1.0, 'rouge': 0.999999995}"
+"<fim_prefix>def load_yaml_data(config_path):
+    with open(config_path, 'r') as f:
+<fim_suffix>
+    return data<fim_middle>",        data = yaml.safe_load(f),"<fim_prefix>def load_yaml_data(config_path):
+    with open(config_path, 'r') as f:
+<fim_suffix>
+    return data<fim_middle>        data = yaml.load(f)<|endoftext|>",        data = yaml.load(f),"{'chrf': 0.7591174389099576, 'exact_match': 0.0, 'jaccard': 0.5, 'rouge': 0.749999995}"

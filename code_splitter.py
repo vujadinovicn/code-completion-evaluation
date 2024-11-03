@@ -8,10 +8,11 @@ def get_functions_code(script_code):
     code_lines = script_code.split("\n")
     functions = []
 
-    function_pattern = re.compile(r"^(def\s+\w+\(.*?\):)", re.MULTILINE)
+    function_pattern = re.compile(r"^\s*def\s+\w+\(.*?\):", re.MULTILINE)
     matches = list(function_pattern.finditer(script_code))
 
     for i in range(len(matches)):
+        print("tu")
         start_line_number = script_code.count('\n', 0, matches[i].start())
         if i + 1 < len(matches):
             end_line_number = script_code.count('\n', 0, matches[i + 1].start())
@@ -55,6 +56,7 @@ def main(source_dir, output_json):
             python_code = f.read()
         functions = get_functions_code(python_code)
         for i, function_code in enumerate(functions, start=1):
+            print(function_code)
             splitted_function = split_function_code(function_code)
             if splitted_function:
                 prefix, middle, suffix = splitted_function
@@ -64,6 +66,6 @@ def main(source_dir, output_json):
         json.dump(dataset, json_file, indent=4)
 
 if __name__ == "__main__":
-    source_dir = "repository_python_files/"
-    output_file = "splitted_code.json"
+    source_dir = "data_for_evaluation/repository_python_files/"
+    output_file = "data_for_evaluation/splitted_code.json"
     main(source_dir, output_file)
